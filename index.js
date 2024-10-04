@@ -43,7 +43,7 @@ window.addEventListener("load", function () {
     frameworkUrl: buildUrl + "/Build.framework.js.unityweb",
     codeUrl: buildUrl + "/Build.wasm.unityweb",
     streamingAssetsUrl: "StreamingAssets",
-    companyName: "devten",
+    companyName: "solzam",
     productName: "allstar",
     productVersion: "1",
     showBanner: unityShowBanner,
