@@ -79,23 +79,5 @@ window.addEventListener("load", function () {
       alert(message);
     });
   };
-document.body.appendChild(script);
 
-window.addEventListener('load', function () {
-    Telegram.WebApp.ready();
-    Telegram.WebApp.expand();
-
-    console.log(`Telegram web app has been expanded to full screen`);
-
-    var version = Telegram.WebApp.version;
-    var versionFloat = parseFloat(version);
-
-    if (versionFloat >= 7.7) {
-        Telegram.WebApp.disableVerticalSwipes();
-
-        console.log(`Activating vertical swipe disable`);
-    }
-
-    console.log(`Telegram Web App opened with version: ${version}`);
-    console.log(`Telegram Web App checked latest version status with result: ${Telegram.WebApp.isVersionAtLeast(version)}`);
-});
+  document.body.appendChild(script);
