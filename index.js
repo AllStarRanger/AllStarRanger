@@ -5,28 +5,23 @@ window.addEventListener("load", function () {
 });
 
 window.addEventListener('load', function () {
+    //< 웹뷰 화면 늘리기
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
 
-    //< 화면 회전 금지 기능
-    screen.orientation.lock('landscape').then(function () {
-        Telegram.WebApp.alert("screen.orientation.lock");
+    //< 화면 회전 금지
+    screen.orientation.lock('vertical').then(function () {
+        Telegram.WebApp.alert("screen.orientation.lock('vertical')");
     }).catch(function (error) {
-        Telegram.WebApp.alert("screen.orientation.lock error : " + error);
+        Telegram.WebApp.alert("screen.orientation.lock('vertical') error : " + error);
     });
 
-    //< 앱을 스와이프로 닫는 기능 중지
+    //< 웹뷰 스와이프 닫기 금지
     //Telegram.WebApp.disableVerticalSwipes();
 
-    //< 앱을 스와이프로 닫는 기능 중지 With Version Check : 버전 체크 동작이 되지 않음
+    //< Version Check
     //var version = Telegram.WebApp.version;
     //var versionFloat = parseFloat(version);
-    //if (versionFloat >= 7.7) {
-    //    Telegram.WebApp.disableVerticalSwipes();
-    //    console.log(`Activating vertical swipe disable`);
-    //}
-    //console.log(`Telegram Web App opened with version: ${version}`);
-    //console.log(`Telegram Web App checked latest version status with result: ${Telegram.WebApp.isVersionAtLeast(version)}`);
 });
 
   var unityInstanceRef;
