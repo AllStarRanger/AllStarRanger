@@ -10,11 +10,14 @@ window.addEventListener('load', function () {
     Telegram.WebApp.expand();
 
     //< 화면 회전 금지
-    screen.orientation.lock('vertical').then(function () {
-        Telegram.WebApp.alert("screen.orientation.lock('vertical')");
-    }).catch(function (error) {
-        Telegram.WebApp.alert("screen.orientation.lock('vertical') error : " + error);
-    });
+    //screen.orientation.lock('vertical').then(function () {
+    //    Telegram.WebApp.alert("screen.orientation.lock('vertical')");
+    //}).catch(function (error) {
+    //    Telegram.WebApp.alert("screen.orientation.lock('vertical') error : " + error);
+    //});
+
+    window.screen.orientation.lock("portrait");
+    Telegram.WebApp.alert("window.screen.orientation.lock");
 
     //< 웹뷰 스와이프 닫기 금지
     //Telegram.WebApp.disableVerticalSwipes();
