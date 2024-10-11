@@ -7,21 +7,17 @@ window.addEventListener("load", function () {
 window.addEventListener('load', function () {
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
+    Telegram.WebApp.disableVerticalSwipes();
 
-    console.log(`Telegram web app has been expanded to full screen`);
-
-    var version = Telegram.WebApp.version;
-    var versionFloat = parseFloat(version);
-
-    if (versionFloat >= 7.7) {
-        Telegram.WebApp.disableVerticalSwipes();
-
-        Telegram.WebApp.showAlert("Telegram.WebApp.disableVerticalSwipes()");
-        console.log(`Activating vertical swipe disable`);
-    }
-
-    console.log(`Telegram Web App opened with version: ${version}`);
-    console.log(`Telegram Web App checked latest version status with result: ${Telegram.WebApp.isVersionAtLeast(version)}`);
+    //< 앱을 스와이프로 닫는 기능 중지
+    //var version = Telegram.WebApp.version;
+    //var versionFloat = parseFloat(version);
+    //if (versionFloat >= 7.7) {
+    //    Telegram.WebApp.disableVerticalSwipes();
+    //    console.log(`Activating vertical swipe disable`);
+    //}
+    //console.log(`Telegram Web App opened with version: ${version}`);
+    //console.log(`Telegram Web App checked latest version status with result: ${Telegram.WebApp.isVersionAtLeast(version)}`);
 });
 
   var unityInstanceRef;
