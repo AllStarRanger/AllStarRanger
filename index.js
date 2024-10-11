@@ -9,6 +9,9 @@ window.addEventListener('load', function () {
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
 
+    //< 화면 회전 고정
+    requestFullScreen();
+
     //< 웹뷰 스와이프 닫기 금지
     //Telegram.WebApp.disableVerticalSwipes();
 
@@ -66,10 +69,6 @@ function requestFullScreen() {
 
     screen.orientation.lock('portrait');
 }
-
-window.onload = function () {
-    requestFullScreen();
-};
 
   var buildUrl = "Build";
   var loaderUrl = buildUrl + "/Build.loader.js";
