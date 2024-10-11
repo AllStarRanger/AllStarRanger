@@ -9,26 +9,12 @@ window.addEventListener('load', function () {
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
 
-    //< 화면 회전 금지
-    window.screen.orientation.lock('landscape').then(function () {
-        Telegram.WebApp.alert("window.screen.orientation.lock('landscape')");
-    }).catch(function (error) {
-        Telegram.WebApp.alert("window.screen.orientation.lock('landscape') error : " + error);
-    });
-
     //< 웹뷰 스와이프 닫기 금지
     //Telegram.WebApp.disableVerticalSwipes();
 
     //< Version Check
     //var version = Telegram.WebApp.version;
     //var versionFloat = parseFloat(version);
-});
-
-//< 화면 회전 금지
-window.screen.orientation.lock('landscape').then(function () {
-    Telegram.WebApp.alert("aa_window.screen.orientation.lock('landscape')");
-}).catch(function (error) {
-    Telegram.WebApp.alert("aa_window.screen.orientation.lock('landscape') error : " + error);
 });
 
   var unityInstanceRef;
@@ -61,7 +47,29 @@ window.screen.orientation.lock('landscape').then(function () {
       }, 5000);
     }
     updateBannerVisibility();
-  }
+}
+
+function requestFullScreen() {
+
+    Telegram.WebApp.alert("requestFullScreen()");
+
+    const element = document.documentElement; // 전체 페이지를 대상으로 설정
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari, Opera
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE/Edge
+        element.msRequestFullscreen();
+    }
+
+    screen.orientation.lock('portrait');
+}
+
+window.onload = function () {
+    requestFullScreen();
+};
 
   var buildUrl = "Build";
   var loaderUrl = buildUrl + "/Build.loader.js";
