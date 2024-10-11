@@ -1,42 +1,19 @@
-window.addEventListener("load", function () {
+癤퓑indow.addEventListener("load", function () {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("ServiceWorker.js");
     }
 
-    //< 웹뷰 화면 늘리기
+    //< WebApp Expand
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
 
-    //< 화면 회전 고정
-    requestFullScreen();
-
-    //< 화면 회전 고정
-    window.addEventListener('orientationchange', function (e) {
-    })
-
-    //< 웹뷰 스와이프 닫기 금지
+    //< Disable Vertical Swipes
     //Telegram.WebApp.disableVerticalSwipes();
 
     //< Version Check
     //var version = Telegram.WebApp.version;
     //var versionFloat = parseFloat(version);
 });
-
-//window.addEventListener('load', function () {
-//    //< 웹뷰 화면 늘리기
-//    Telegram.WebApp.ready();
-//    Telegram.WebApp.expand();
-
-//    //< 화면 회전 고정
-//    requestFullScreen();
-
-//    //< 웹뷰 스와이프 닫기 금지
-//    //Telegram.WebApp.disableVerticalSwipes();
-
-//    //< Version Check
-//    //var version = Telegram.WebApp.version;
-//    //var versionFloat = parseFloat(version);
-//});
 
   var unityInstanceRef;
   var unsubscribe;
@@ -74,7 +51,7 @@ function requestFullScreen() {
 
     Telegram.WebApp.alert("requestFullScreen()");
 
-    const element = document.documentElement; // 전체 페이지를 대상으로 설정
+    const element = document.documentElement; 
     if (element.requestFullscreen) {
         element.requestFullscreen();
     } else if (element.mozRequestFullScreen) { // Firefox
