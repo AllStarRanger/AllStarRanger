@@ -13,11 +13,10 @@ window.addEventListener('load', function () {
     var version = Telegram.WebApp.version;
     var versionFloat = parseFloat(version);
 
-    Telegram.WebApp.showAlert("version : " + version);
-
     if (versionFloat >= 7.7) {
         Telegram.WebApp.disableVerticalSwipes();
 
+        Telegram.WebApp.showAlert("Telegram.WebApp.disableVerticalSwipes()");
         console.log(`Activating vertical swipe disable`);
     }
 
