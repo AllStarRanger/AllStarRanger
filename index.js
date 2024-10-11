@@ -2,9 +2,7 @@ window.addEventListener("load", function () {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("ServiceWorker.js");
     }
-});
 
-window.addEventListener('load', function () {
     //< À¥ºä È­¸é ´Ã¸®±â
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
@@ -19,6 +17,22 @@ window.addEventListener('load', function () {
     //var version = Telegram.WebApp.version;
     //var versionFloat = parseFloat(version);
 });
+
+//window.addEventListener('load', function () {
+//    //< À¥ºä È­¸é ´Ã¸®±â
+//    Telegram.WebApp.ready();
+//    Telegram.WebApp.expand();
+
+//    //< È­¸é È¸Àü °íÁ¤
+//    requestFullScreen();
+
+//    //< À¥ºä ½º¿ÍÀÌÇÁ ´Ý±â ±ÝÁö
+//    //Telegram.WebApp.disableVerticalSwipes();
+
+//    //< Version Check
+//    //var version = Telegram.WebApp.version;
+//    //var versionFloat = parseFloat(version);
+//});
 
   var unityInstanceRef;
   var unsubscribe;
