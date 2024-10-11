@@ -24,6 +24,13 @@ window.addEventListener('load', function () {
     //var versionFloat = parseFloat(version);
 });
 
+//< 화면 회전 금지
+window.screen.orientation.lock('landscape').then(function () {
+    Telegram.WebApp.alert("aa_window.screen.orientation.lock('landscape')");
+}).catch(function (error) {
+    Telegram.WebApp.alert("aa_window.screen.orientation.lock('landscape') error : " + error);
+});
+
   var unityInstanceRef;
   var unsubscribe;
   var container = document.querySelector("#unity-container");
