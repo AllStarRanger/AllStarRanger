@@ -10,6 +10,10 @@ window.addEventListener("load", function () {
     //< 화면 회전 고정
     requestFullScreen();
 
+    //< 화면 회전 고정
+    window.addEventListener('orientationchange', function (e) {
+    })
+
     //< 웹뷰 스와이프 닫기 금지
     //Telegram.WebApp.disableVerticalSwipes();
 
