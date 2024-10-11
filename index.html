@@ -19,6 +19,23 @@
         </div>
         <div id="unity-warning"> </div>
     </div>
+    <script>
+        function lockOrientation() {
+            if (screen.orientation) {
+                screen.orientation.lock('landscape').then(function () {
+                    console.log("Orientation locked to landscape");
+                }).catch(function (error) {
+                    console.error("Orientation lock failed: ", error);
+                });
+            } else {
+                console.warn("Orientation lock not supported on this browser.");
+            }
+        }
+
+        window.onload = function () {
+            lockOrientation();
+        }
+    </script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="index.js"></script>
 </body>

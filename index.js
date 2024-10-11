@@ -7,9 +7,11 @@ window.addEventListener("load", function () {
 window.addEventListener('load', function () {
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
-    Telegram.WebApp.disableVerticalSwipes();
 
     //< 앱을 스와이프로 닫는 기능 중지
+    //Telegram.WebApp.disableVerticalSwipes();
+
+    //< 앱을 스와이프로 닫는 기능 중지 With Version Check : 버전 체크 동작이 되지 않음
     //var version = Telegram.WebApp.version;
     //var versionFloat = parseFloat(version);
     //if (versionFloat >= 7.7) {
