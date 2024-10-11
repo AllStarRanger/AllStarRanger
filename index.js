@@ -8,6 +8,13 @@ window.addEventListener('load', function () {
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
 
+    //< 화면 회전 금지 기능
+    screen.orientation.lock('landscape').then(function () {
+        Telegram.WebApp.alert("screen.orientation.lock");
+    }).catch(function (error) {
+        Telegram.WebApp.alert("screen.orientation.lock error : " + error);
+    });
+
     //< 앱을 스와이프로 닫는 기능 중지
     //Telegram.WebApp.disableVerticalSwipes();
 
