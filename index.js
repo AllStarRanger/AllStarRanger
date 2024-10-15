@@ -1,4 +1,4 @@
-﻿window.addEventListener("load", function () {
+window.addEventListener("load", function () {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("ServiceWorker.js");
     }
@@ -45,13 +45,13 @@
       }, 5000);
     }
     updateBannerVisibility();
-}
+  }
 
 function requestFullScreen() {
 
     Telegram.WebApp.alert("requestFullScreen()");
 
-    const element = document.documentElement; 
+    const element = document.documentElement;
     if (element.requestFullscreen) {
         element.requestFullscreen();
     } else if (element.mozRequestFullScreen) { // Firefox
@@ -108,5 +108,4 @@ function requestFullScreen() {
       alert(message);
     });
   };
-
-document.body.appendChild(script);
+  document.body.appendChild(script);
