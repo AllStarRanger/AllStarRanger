@@ -12,10 +12,10 @@ window.addEventListener("load", function () {
 
     //< Check Enter Telegram Web View
     if (isTelegramWebView()) {
-        Telegram.WebApp.alert("Telegram Web View");
+        alert("Telegram Web View");
         //Telegram.WebApp.alert("Telegram Web View를 통해 접속하였습니다.\n" + unsafeData);
     } else {
-        Telegram.WebApp.alert("Not Telegram Web View");
+        alert("Not Telegram Web View");
         //Telegram.WebApp.alert("일반 브라우저를 통해 접속하였습니다.\n" + unsafeData);
     }
 
@@ -108,10 +108,10 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
     meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
     document.getElementsByTagName('head')[0].appendChild(meta);
 
-    Telegram.WebApp.alert("Device");
+    alert("Device");
 }
 else {
-    Telegram.WebApp.alert("No Device");
+    alert("No Device");
 }
 
   canvas.style.background = "url('" + buildUrl + "/Build.jpg') center / cover";
