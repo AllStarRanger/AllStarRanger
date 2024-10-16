@@ -51,7 +51,7 @@ window.addEventListener("load", function () {
   }
 
 function isTelegramWebView() {
-    return Telegram != null && Telegram.WebApp != null && Telegram.WebApp.initDataUnsafe != null;
+    return Telegram.WebApp.initDataUnsafe.user != null;
 }
 
 function requestFullScreen() {
@@ -119,5 +119,5 @@ if (isTelegramWebView()) {
     document.body.appendChild(script);
 }
 else {
-    alert("Can't be play in this environment.");
+    alert("Can't be play in this environment!");
 }
