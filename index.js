@@ -7,9 +7,6 @@ window.addEventListener("load", function () {
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
 
-    //< WebApp Init Data
-    //const unsafeData = Telegram.WebApp.initDataUnsafe;
-
     //< Disable Vertical Swipes
     //Telegram.WebApp.disableVerticalSwipes();
 
