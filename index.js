@@ -101,13 +101,18 @@ function requestFullScreen() {
   // the canvas DOM size and WebGL render target sizes yourself.
   // config.matchWebGLToCanvasSize = false;
 
-  if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
     // Mobile device style: fill the whole browser client area with the game canvas:
     var meta = document.createElement('meta');
     meta.name = 'viewport';
     meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
     document.getElementsByTagName('head')[0].appendChild(meta);
-  }
+
+    Telegram.WebApp.alert("Device");
+}
+else {
+    Telegram.WebApp.alert("No Device");
+}
 
   canvas.style.background = "url('" + buildUrl + "/Build.jpg') center / cover";
   loadingBar.style.display = "block";
