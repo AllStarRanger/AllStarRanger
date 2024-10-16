@@ -51,11 +51,7 @@ window.addEventListener("load", function () {
   }
 
 function isTelegramWebView() {
-    //return navigator.userAgent.includes("TelegramBot");
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const startParam = urlParams.get('start');
-    return startParam !== null;
+    return Telegram != null && Telegram.WebApp != null && Telegram.WebApp.initDataUnsafe != null;
 }
 
 function requestFullScreen() {
@@ -123,5 +119,5 @@ if (isTelegramWebView()) {
     document.body.appendChild(script);
 }
 else {
-    alert("Can not be play in this environment.");
+    alert("Can't be play in this environment.");
 }
