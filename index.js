@@ -10,15 +10,6 @@ window.addEventListener("load", function () {
     //< WebApp Init Data
     //const unsafeData = Telegram.WebApp.initDataUnsafe;
 
-    //< Check Enter Telegram Web View
-    //if (isTelegramWebView()) {
-    //    alert("Telegram Web View");
-    //    //Telegram.WebApp.alert("Telegram Web View를 통해 접속하였습니다.\n" + unsafeData);
-    //} else {
-    //    alert("Not Telegram Web View");
-    //    //Telegram.WebApp.alert("일반 브라우저를 통해 접속하였습니다.\n" + unsafeData);
-    //}
-
     //< Disable Vertical Swipes
     //Telegram.WebApp.disableVerticalSwipes();
 
@@ -60,7 +51,11 @@ window.addEventListener("load", function () {
   }
 
 function isTelegramWebView() {
-    return navigator.userAgent.includes("TelegramBot");
+    //return navigator.userAgent.includes("TelegramBot");
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const startParam = urlParams.get('start');
+    return startParam !== null;
 }
 
 function requestFullScreen() {
@@ -128,5 +123,5 @@ if (isTelegramWebView()) {
     document.body.appendChild(script);
 }
 else {
-    alert("This cannot be play in this environment.");
+    alert("Can not be play in this environment.");
 }
