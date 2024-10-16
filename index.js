@@ -8,7 +8,7 @@ window.addEventListener("load", function () {
     Telegram.WebApp.expand();
 
     //< WebApp Init Data
-    const unsafeData = window.Telegram.WebApp.initDataUnsafe;
+    const unsafeData = Telegram.WebApp.initDataUnsafe;
 
     //< Check Enter Telegram Web View
     if (isTelegramWebView()) {
