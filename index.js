@@ -7,6 +7,16 @@ window.addEventListener("load", function () {
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
 
+    //< WebApp Init Data
+    const unsafeData = window.Telegram.WebApp.initDataUnsafe;
+
+    //< Check Enter Telegram Web View
+    if (isTelegramWebView()) {
+        Telegram.WebApp.alert("Telegram Web View를 통해 접속하였습니다.\n" + unsafeData);
+    } else {
+        Telegram.WebApp.alert("일반 브라우저를 통해 접속하였습니다.\n" + unsafeData);
+    }
+
     //< Disable Vertical Swipes
     //Telegram.WebApp.disableVerticalSwipes();
 
@@ -46,6 +56,10 @@ window.addEventListener("load", function () {
     }
     updateBannerVisibility();
   }
+
+function isTelegramWebView() {
+    return navigator.userAgent.includes("TelegramBot");
+}
 
 function requestFullScreen() {
 
