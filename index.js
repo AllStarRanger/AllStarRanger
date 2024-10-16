@@ -11,13 +11,13 @@ window.addEventListener("load", function () {
     //const unsafeData = Telegram.WebApp.initDataUnsafe;
 
     //< Check Enter Telegram Web View
-    if (isTelegramWebView()) {
-        alert("Telegram Web View");
-        //Telegram.WebApp.alert("Telegram Web View를 통해 접속하였습니다.\n" + unsafeData);
-    } else {
-        alert("Not Telegram Web View");
-        //Telegram.WebApp.alert("일반 브라우저를 통해 접속하였습니다.\n" + unsafeData);
-    }
+    //if (isTelegramWebView()) {
+    //    alert("Telegram Web View");
+    //    //Telegram.WebApp.alert("Telegram Web View를 통해 접속하였습니다.\n" + unsafeData);
+    //} else {
+    //    alert("Not Telegram Web View");
+    //    //Telegram.WebApp.alert("일반 브라우저를 통해 접속하였습니다.\n" + unsafeData);
+    //}
 
     //< Disable Vertical Swipes
     //Telegram.WebApp.disableVerticalSwipes();
@@ -107,26 +107,26 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
     meta.name = 'viewport';
     meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
     document.getElementsByTagName('head')[0].appendChild(meta);
-
-    alert("Device");
-}
-else {
-    alert("No Device");
 }
 
   canvas.style.background = "url('" + buildUrl + "/Build.jpg') center / cover";
   loadingBar.style.display = "block";
 
-  var script = document.createElement("script");
-  script.src = loaderUrl;
-  script.onload = () => {
-    createUnityInstance(canvas, config, (progress) => {
-      progressBarFull.style.width = 100 * progress + "%";
-    }).then((unityInstance) => {
-      unityInstanceRef = unityInstance;
-      loadingBar.style.display = "none";
-    }).catch((message) => {
-      alert(message);
-    });
-  };
-  document.body.appendChild(script);
+if (isTelegramWebView()) {
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+            progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+            unityInstanceRef = unityInstance;
+            loadingBar.style.display = "none";
+        }).catch((message) => {
+            alert(message);
+        });
+    };
+    document.body.appendChild(script);
+}
+else {
+    alert("This cannot be play in this environment.");
+}
