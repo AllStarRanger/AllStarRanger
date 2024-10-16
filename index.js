@@ -8,13 +8,15 @@ window.addEventListener("load", function () {
     Telegram.WebApp.expand();
 
     //< WebApp Init Data
-    const unsafeData = Telegram.WebApp.initDataUnsafe;
+    //const unsafeData = Telegram.WebApp.initDataUnsafe;
 
     //< Check Enter Telegram Web View
     if (isTelegramWebView()) {
-        Telegram.WebApp.alert("Telegram Web View를 통해 접속하였습니다.\n" + unsafeData);
+        Telegram.WebApp.alert("Telegram Web View");
+        //Telegram.WebApp.alert("Telegram Web View를 통해 접속하였습니다.\n" + unsafeData);
     } else {
-        Telegram.WebApp.alert("일반 브라우저를 통해 접속하였습니다.\n" + unsafeData);
+        Telegram.WebApp.alert("Not Telegram Web View");
+        //Telegram.WebApp.alert("일반 브라우저를 통해 접속하였습니다.\n" + unsafeData);
     }
 
     //< Disable Vertical Swipes
