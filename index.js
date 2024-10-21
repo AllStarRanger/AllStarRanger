@@ -55,6 +55,10 @@ function AppQuit() {
     Telegram.WebApp.close();
 }
 
+function GetTelegramUserData() {
+    SendMessage('JavaToUnityManager', 'ReceiveTelegramUserData', Telegram.WebApp.initDataUnsafe.user);
+}
+
   var buildUrl = "Build";
   var loaderUrl = buildUrl + "/Build.loader.js";
   var config = {
